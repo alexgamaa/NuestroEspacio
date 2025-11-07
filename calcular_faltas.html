@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuestro Espacio | Inicio</title>
+    <title>Calcular Faltas | Nuestro Espacio</title>
     <link rel="stylesheet" href="src/css/main.css" />
     <script defer src="src/js/main.js"></script>
     <script defer src="src/js/theme.js"></script>
@@ -12,26 +12,31 @@
 <header class="header">
     <div class="logo">Nuestro Espacio ❤️</div>
     <nav class="nav">
-        <a href="index.html" class="active">Inicio</a>
+        <a href="index.html">Inicio</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="galeria.html">Galería</a>
         <a href="futuro.html">Futuro</a>
-        <a href="cartas.html">Carta 💌</a> <!-- 🔗 Nuevo enlace -->
-        <a href="calcular_faltas.html">Calcular Faltas</a> <!-- Nuevo enlace -->
-
+        <a href="cartas.html">Carta 💌</a>
+        <a href="calcular_faltas.html" class="active">Calcular Faltas</a> <!-- Enlace a la página actual -->
         <button id="themeToggle" class="theme-toggle">🌓</button>
     </nav>
 </header>
 
 <main class="section hero">
-    <h1>Bienvenida a nuestro lugar</h1>
-    <p>Un rincón donde construiremos algo nuestro, paso a paso, sin prisa, con cariño ❤️</p>
+    <h1>Calcular Faltas</h1>
+    <p>Introduce las horas faltadas para cada asignatura y calcula cuántas horas te quedan antes de alcanzar el límite.</p>
 
+    <section class="faltas-section">
+        <div class="faltas-form" id="formulario"></div>
+        <button class="btn-calc" onclick="calcularFaltas()">Calcular</button>
+
+        <div id="resultados" class="faltas-resultados"></div>
+    </section>
 </main>
-
 
 <footer class="footer">
     <p>Hecho con ❤️ por nosotros | <span id="year"></span></p>
 </footer>
+
 </body>
 </html>

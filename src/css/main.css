@@ -423,3 +423,99 @@ main {
     color: var(--texto);
     font-size: 1rem;
 }
+/* === SECCIÓN CONTROL DE FALTAS === */
+.faltas-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.materia-input {
+    display: flex;
+    flex-direction: column;
+    background: var(--fondo);
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.materia-input:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.materia-input label {
+    font-weight: 500;
+    color: var(--granate);
+    margin-bottom: 0.5rem;
+}
+
+.materia-input input {
+    padding: 0.5rem;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    color: var(--texto);
+    transition: border-color 0.3s;
+}
+[data-theme="dark"] .materia-input input {
+    background: #222;
+    color: #fff;
+}
+.materia-input input:focus {
+    border-color: var(--granate);
+    outline: none;
+}
+
+/* Botón de calcular */
+.btn-calc {
+    background: var(--granate);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn-calc:hover {
+    background: var(--rojo);
+    transform: scale(1.05);
+}
+
+/* Resultados */
+.faltas-resultados {
+    margin-top: 2rem;
+    background: var(--fondo);
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.faltas-resultados h2 {
+    color: var(--granate);
+    margin-bottom: 1rem;
+}
+
+.faltas-resultados p {
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.faltas-resultados p.ok {
+    color: green;
+}
+
+.faltas-resultados p.alerta {
+    color: #e6b800;
+}
+
+.faltas-resultados p.error {
+    color: red;
+}
