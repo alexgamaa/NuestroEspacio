@@ -3,46 +3,59 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".section");
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add("visible");
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            } else {
+                // Opcional: Para quitar la clase "visible" cuando la sección sale del viewport
+                entry.target.classList.remove("visible");
+            }
         });
-    }, { threshold: 0.2 });
+    }, {threshold: 0.2});
 
+    // Inicializa todas las secciones como invisibles
     sections.forEach(section => {
         section.classList.add("hidden");
         observer.observe(section);
     });
 
+    // Añadir el año actual al footer
     document.getElementById("year").textContent = new Date().getFullYear();
 });
+
 // --- Efecto flip en la galería ---
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
         card.classList.toggle('flipped');
     });
 });
+
+// Información de las asignaturas
 const asignaturas = [
-    { nombre: "Programación", horas: 266 },
-    { nombre: "Inglés", horas: 68 },
-    { nombre: "Lenguaje de Marcas", horas: 100 },
-    { nombre: "Sistemas Informáticos", horas: 166 },
-    { nombre: "Base de Datos", horas: 166 },
-    { nombre: "Entornos", horas: 100 },
-    { nombre: "Proyecto", horas: 34 }
+    {nombre: "Programación", horas: 266},
+    {nombre: "Inglés", horas: 68},
+    {nombre: "Lenguaje de Marcas", horas: 100},
+    {nombre: "Sistemas Informáticos", horas: 166},
+    {nombre: "Base de Datos", horas: 166},
+    {nombre: "Entornos", horas: 100},
+    {nombre: "Proyecto", horas: 34}
 ];
 
+// Generar dinámicamente los inputs del formulario
 const formularioDiv = document.getElementById("formulario");
 
-// Crear inputs dinámicamente
-asignaturas.forEach(a => {
-    const div = document.createElement("div");
-    div.className = "materia-input";
-    div.innerHTML = `
-    <label>${a.nombre}</label>
-    <input type="number" id="${a.nombre}" min="0" placeholder="Horas faltadas">
-  `;
-    formularioDiv.appendChild(div);
-});
+if (formularioDiv) {
+    asignaturas.forEach(a => {
+        const div = document.createElement("div");
+        div.className = "materia-input";
+        div.innerHTML = `
+            <label>${a.nombre}</label>
+            <input type="number" id="${a.nombre}" min="0" placeholder="Horas faltadas">
+        `;
+        formularioDiv.appendChild(div);
+    });
+}
 
+// Función para calcular las faltas
 function calcularFaltas() {
     const resultados = document.getElementById("resultados");
     resultados.innerHTML = "<h2>Resultados</h2>";
