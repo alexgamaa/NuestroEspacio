@@ -6,6 +6,7 @@
     --fondo: #fafafa;
     --texto: #222;
     --borde: #ddd;
+    --card-bg: #fafafa;
 }
 
 [data-theme="dark"] {
@@ -27,7 +28,7 @@ body {
     color: var(--texto);
     line-height: 1.6;
     transition: background 0.4s, color 0.4s;
-    cursor: url("src/assets/cursor/kit-kat-blanco-removebg-preview.png") 4 4, auto;
+
 
 }
 
