@@ -82,3 +82,21 @@ function calcularFaltas() {
         resultados.innerHTML += `<p class="${clase}">${mensaje}</p>`;
     });
 }
+
+function updateDaysTogether() {
+    const startDate = new Date('2025-10-18'); // Cambia a la fecha de inicio de su relación
+    const today = new Date();
+    const diffTime = today - startDate;
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById('daysTogether').textContent = diffDays;
+}
+
+// Actualiza al cargar
+updateDaysTogether();
+// Opcional: actualizar cada día (si quieren que cambie automáticamente a medianoche)
+setInterval(updateDaysTogether, 1000 * 60 * 60); // actualiza cada hora
+
+
+document.getElementById('playGame').addEventListener('click', () => {
+    window.location.href = 'https://www.jetpunk.com/es'; // Cambia a la URL real del juego
+});
