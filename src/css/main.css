@@ -547,3 +547,30 @@ main {
 .section.juego .btn:hover {
     transform: scale(1.1);
 }
+
+.gallery img,
+.gallery .card-front img {
+    width: 100%;
+    height: 280px;        /* 🔥 ALTURA UNIFORME */
+    object-fit: cover;    /* recorta sin deformar */
+    border-radius: 10px;
+}
+
+.carta-contenido {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ff7aa2; /* color del borde */
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    line-height: 1.7;
+}
+
+.fecha-final {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+    font-style: italic;
+    text-align: right;
+}
