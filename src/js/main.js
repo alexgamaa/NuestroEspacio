@@ -31,13 +31,13 @@ document.querySelectorAll('.card').forEach(card => {
 
 // Información de las asignaturas
 const asignaturas = [
-    {nombre: "Programación", horas: 266},
-    {nombre: "Inglés", horas: 68},
-    {nombre: "Lenguaje de Marcas", horas: 100},
-    {nombre: "Sistemas Informáticos", horas: 166},
-    {nombre: "Base de Datos", horas: 166},
-    {nombre: "Entornos", horas: 100},
-    {nombre: "Proyecto", horas: 34}
+    {nombre: "Citología Ginecológica", horas: 105},
+    {nombre: "Patología Clínica", horas: 42},
+    {nombre: "Innovación", horas: 42},
+    {nombre: "Biología Molecular", horas: 126},
+    {nombre: "Inglés", horas: 63},
+    {nombre: "Sostenibilidad", horas: 42},
+    {nombre: "Técnicas Generales de Laboratorio", horas: 147}
 ];
 
 // Generar dinámicamente los inputs del formulario
@@ -62,7 +62,7 @@ function calcularFaltas() {
 
     asignaturas.forEach(a => {
         const horasFaltadas = parseInt(document.getElementById(a.nombre).value) || 0;
-        const limite = Math.floor(a.horas * 0.15);
+        const limite = Math.floor(a.horas * 0.20);
         const restantes = limite - horasFaltadas;
 
         let mensaje = "";
